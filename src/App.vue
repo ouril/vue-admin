@@ -10,6 +10,12 @@
           <li class="nav-item active">
             <router-link to="/about" class="nav-link">something</router-link>
           </li>
+          <li class="nav-item active">
+            <router-link to="/about" class="nav-link">something</router-link>
+          </li>
+          <li class="nav-item active">
+            <router-link to="/about" class="nav-link">something</router-link>
+          </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -26,4 +32,7 @@
 </template>
 
 <style>
+main {
+  margin-top: 7%;
+}
 </style>

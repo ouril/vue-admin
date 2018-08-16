@@ -19,5 +19,10 @@ export default new Router({
       name: 'about',
       component: About
     }
+    /*{
+      path: '/users',
+      name: 'users',
+      component: Users
+    }*/
   ]
 });
