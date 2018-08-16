@@ -8,13 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <router-link to="/about" class="nav-link">something</router-link>
+            <router-link to="/about" class="nav-link">о проекте</router-link>
           </li>
           <li class="nav-item active">
-            <router-link to="/users" class="nav-link">something</router-link>
+            <router-link to="/users" class="nav-link">cписок пользователей</router-link>
           </li>
           <li class="nav-item active">
-            <router-link to="/about" class="nav-link">something</router-link>
+            <router-link to="/about" class="nav-link">добавление пользователя</router-link>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">

@@ -1,4 +1,5 @@
 <template>
+    <div>
             <table class="table table-hover">
               <tr v-for="user in users" v-bind:key="user.id">
                 <td>
@@ -26,6 +27,8 @@
                 </td>
               </tr>
             </table>
+        <span>Всего {{ total }} пользователей</span>
+    </div>
 </template>
 <script>
 export default {

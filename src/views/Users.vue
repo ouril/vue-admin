@@ -1,11 +1,18 @@
 <template>
     <div>
         <h2>Список пользователей</h2>
-        <div v-if="!users.length" class="alert alert-warning">
+        <div v-if="loading" class="alert alert-warning">
             Loading.........
         </div>
+        <div v-else-if="!users.length">
+            Нет пользователей
+        </div>
         <user-list v-else :users="users"></user-list>
+        <button type="button" class="btn btn-primary" @click="loadData">
+            UPDATE
+        </button>
     </div>
+
 </template> 
 <script>
 import axios from 'axios';
@@ -14,25 +21,23 @@ export default {
   components: {
     'user-list': UserList
   },
-  data: function() {
-    return {
-      users: []
-    };
-  },
-  mounted: function() {
+  data: () => ({
+    users: [],
+    loading: true
+  }),
+  mounted() {
     this.loadData();
   },
   methods: {
-    loadData: function() {
-      var self = this;
-
+    loadData() {
+      this.loading = true;
       axios
         .get('http://127.0.0.1:3000/users')
-        .then(function(response) {
-          self.users = response.data;
-          console.log('паннные пользователей загруженны');
+        .then(response => {
+          this.loading = false;
+          this.users = response.data;
         })
-        .catch(function(error) {
+        .catch(error => {
           console.log(error);
         });
     }
