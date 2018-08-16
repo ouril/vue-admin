@@ -4,20 +4,23 @@
         <div v-if="!users.length" class="alert alert-warning">
             Loading.........
         </div>
-        <user-list v-else v-bind:users="users"></user-list>
+        <user-list v-else :users="users"></user-list>
     </div>
 </template> 
 <script>
 import axios from 'axios';
+import UserList from '@/components/UserList.vue';
 export default {
   components: {
     'user-list': UserList
   },
   data: function() {
-    [];
+    return {
+      users: []
+    };
   },
   mounted: function() {
-      this.loadData()
+    this.loadData();
   },
   methods: {
     loadData: function() {
